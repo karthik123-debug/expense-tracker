@@ -45,7 +45,9 @@ function App() {
   const [currencySymbol, setCurrencySymbol] = useState(CURRENCIES.INR);
   const [darkMode, setDarkMode] = useState(false);
   const [userName, setUserName] = useState(() => localStorage.getItem("userName") || "S. Sai Karthik Reddy"); 
-  const [userRole, setUserRole] = useState("Admin");
+  const [userRole] = useState(
+  () => localStorage.getItem("userRole") || "user"
+);
   const [recurrent, setRecurrent] = useState(false); 
   const [status, setStatus] = useState("Cleared");
   const [startDateFilter, setStartDateFilter] = useState("");
